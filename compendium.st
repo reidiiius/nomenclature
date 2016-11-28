@@ -1,6 +1,10 @@
 #!/usr/bin/gst -g
 
-   db := Dictionary new.
+Object subclass: Scordatura [
+
+  db := Dictionary new.
+
+  Scordatura class >> initialize_db [
    db at:'j2' put:'HgHg PuFe ____ ____ CuNp PbAu ____ AuPb ____ AgUr ____ FePu ';
       at:'j3' put:'HgSn ____ SnHg UrFe ____ PbAg ____ AuAu ____ AgPb ____ FeUr ';
       at:'j5' put:'PbCu ____ AuSn ____ AgHg TiFe FeTi ____ ____ SnAu ____ CuPb ';
@@ -84,34 +88,209 @@
  at:'j3k56x4' put:'HgTi ____ SnNp UrAu ____ ____ ____ AuUr NpSn ____ TiHg FeFe ';
  at:'k1j56y7' put:'____ AuUr NpSn ____ TiHg FeFe HgTi ____ SnNp UrAu ____ ____ ';
  at:'k2j56y7' put:'NpCu ____ ____ FePu HgHg PuFe SnTi ____ CuNp PbAu ____ ____ '.
+  ]
 
-Transcript show: ''; cr.
+  Scordatura class >> sBj: qp [
+    ^((db at: qp) copyFrom:51 to:60), ((db at: qp) copyFrom: 1 to:50).
+  ]
 
-(db keys asSortedCollection) do: [ :qp |
-  Transcript show: qp, '-beadgcf'; cr.
+  Scordatura class >> sFn: qp [
+    ^((db at: qp) copyFrom:26 to:60), ((db at: qp) copyFrom: 1 to:25).
+  ]
 
-  "Fn"
-  Transcript show: ((db at: qp) copyFrom:26 to:60),
-                   ((db at: qp) copyFrom: 1 to:25); cr.
-  "Cn"
-  Transcript show: ((db at: qp) copyFrom: 1 to:60); cr.
+  Scordatura class >> sCn: qp [
+    ^((db at: qp) copyFrom: 1 to:60).
+  ]
 
-  "Gn"
-  Transcript show: ((db at: qp) copyFrom:36 to:60),
-                   ((db at: qp) copyFrom: 1 to:35); cr.
-  "Dn"
-  Transcript show: ((db at: qp) copyFrom:11 to:60),
-                   ((db at: qp) copyFrom: 1 to:10); cr.
-  "An"
-  Transcript show: ((db at: qp) copyFrom:46 to:60),
-                   ((db at: qp) copyFrom: 1 to:45); cr.
-  "En"
-  Transcript show: ((db at: qp) copyFrom:21 to:60),
-                   ((db at: qp) copyFrom: 1 to:20); cr.
-  "Bn"
-  Transcript show: ((db at: qp) copyFrom:56 to:60),
-                   ((db at: qp) copyFrom: 1 to:55); cr.
+  Scordatura class >> sGn: qp [
+    ^((db at: qp) copyFrom:36 to:60), ((db at: qp) copyFrom: 1 to:35).
+  ]
 
-  Transcript show: ''; cr.
+  Scordatura class >> sDn: qp [
+    ^((db at: qp) copyFrom:11 to:60), ((db at: qp) copyFrom: 1 to:10).
+  ]
+
+  Scordatura class >> sAn: qp [
+    ^((db at: qp) copyFrom:46 to:60), ((db at: qp) copyFrom: 1 to:45).
+  ]
+
+  Scordatura class >> sEn: qp [
+    ^((db at: qp) copyFrom:21 to:60), ((db at: qp) copyFrom: 1 to:20).
+  ]
+
+  Scordatura class >> sBn: qp [
+    ^((db at: qp) copyFrom:56 to:60), ((db at: qp) copyFrom: 1 to:55).
+  ]
+
+  Scordatura class >> sFk: qp [
+    ^((db at: qp) copyFrom:31 to:60), ((db at: qp) copyFrom: 1 to:30).
+  ]
+ 
+  Scordatura class >> beadgcf: qp [
+    Transcript show: qp, '-beadgcf'; cr.
+    Transcript show: (Scordatura sFn: qp); cr.
+    Transcript show: (Scordatura sCn: qp); cr. 
+    Transcript show: (Scordatura sGn: qp); cr.
+    Transcript show: (Scordatura sDn: qp); cr. 
+    Transcript show: (Scordatura sAn: qp); cr. 
+    Transcript show: (Scordatura sEn: qp); cr.
+    Transcript show: (Scordatura sBn: qp); cr. 
+  ]
+
+  Scordatura class >> bfbfb: qp [
+    Transcript show: qp, '-bfbfb'; cr.
+    Transcript show: (Scordatura sBn: qp); cr. 
+    Transcript show: (Scordatura sFn: qp); cr.
+    Transcript show: (Scordatura sBn: qp); cr. 
+    Transcript show: (Scordatura sFn: qp); cr. 
+    Transcript show: (Scordatura sBn: qp); cr.
+  ]
+
+  Scordatura class >> cgdae: qp [
+    Transcript show: qp, '-cgdae'; cr.
+    Transcript show: (Scordatura sEn: qp); cr. 
+    Transcript show: (Scordatura sAn: qp); cr.
+    Transcript show: (Scordatura sDn: qp); cr. 
+    Transcript show: (Scordatura sGn: qp); cr. 
+    Transcript show: (Scordatura sCn: qp); cr.
+  ]
+
+  Scordatura class >> eadgbe: qp [
+    Transcript show: qp, '-eadgbe'; cr.
+    Transcript show: (Scordatura sEn: qp); cr. 
+    Transcript show: (Scordatura sBn: qp); cr.
+    Transcript show: (Scordatura sGn: qp); cr. 
+    Transcript show: (Scordatura sDn: qp); cr. 
+    Transcript show: (Scordatura sAn: qp); cr.
+    Transcript show: (Scordatura sEn: qp); cr. 
+  ]
+
+  Scordatura class >> fkbjdn: qp [
+    Transcript show: qp, '-fkbjdn'; cr. 
+    Transcript show: (Scordatura sDn: qp); cr. 
+    Transcript show: (Scordatura sBj: qp); cr.
+    Transcript show: (Scordatura sFk: qp); cr. 
+    Transcript show: (Scordatura sDn: qp); cr. 
+    Transcript show: (Scordatura sBj: qp); cr.
+    Transcript show: (Scordatura sFk: qp); cr. 
+  ]
+
+  display_All_Tunings [
+    Scordatura initialize_db.
+    Transcript show: ''; cr.
+    (db keys asSortedCollection) do: [ :qp |
+      Transcript show: ''; cr.
+        Scordatura eadgbe: qp. 
+      Transcript show: ''; cr.
+        Scordatura fkbjdn: qp. 
+      Transcript show: ''; cr.
+        Scordatura beadgcf: qp. 
+      Transcript show: ''; cr.
+        Scordatura bfbfb: qp.  
+      Transcript show: ''; cr.
+        Scordatura cgdae: qp. 
+      Transcript show: ''; cr.
+    ].
+    Transcript show: ''; cr.
+  ]
+
+  str5_k4: qp [
+    Scordatura bfbfb: qp.
+  ]
+
+  str5_p5: qp [
+    Scordatura cgdae: qp.
+  ]
+
+  str6_m3: qp [
+    Scordatura fkbjdn: qp.
+  ]
+
+  str6_std: qp [
+    Scordatura eadgbe: qp. 
+  ]
+
+  str7_p4: qp [
+    Scordatura beadgcf: qp.
+  ]
+
+  menu [
+    | i w |
+      i := 1.
+      w := 8.
+    '' displayNl.
+    (db keys asSortedCollection) do: [ :qp |
+      qp display.
+      '	' display.
+      (i == ( 1 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 2 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 3 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 4 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 5 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 6 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 7 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 8 * w)) ifTrue: [ '' displayNl ].
+      (i == ( 9 * w)) ifTrue: [ '' displayNl ].
+      (i == (10 * w)) ifTrue: [ '' displayNl ].
+      i := i + 1.
+    ].
+    '' displayNl.
+  ]
+
+  getKeyCol [
+    ^db keys.
+  ]
+
 ]
+
+Scordatura initialize_db.
+
+  inSTRUMent := Scordatura new.
+
+  inSTRUMent menu.
+
+[ qp ~= '' ] whileTrue: [
+
+  '' displayNl.
+  'Enter selection: ' display.
+  qp := stdin nextLine.
+
+  ((inSTRUMent getKeyCol) includes: qp) ifTrue: [
+
+    '' displayNl.
+    inSTRUMent str5_p5: qp.
+
+    '' displayNl.
+    inSTRUMent str5_k4: qp.
+
+    '' displayNl.
+    inSTRUMent str6_std: qp.
+
+    '' displayNl.
+    inSTRUMent str6_m3: qp.
+
+  ]
+
+  ifFalse: [
+
+    (qp ~= '') ifTrue: [
+
+      inSTRUMent menu.
+
+    ]
+
+    ifFalse: [
+
+      '' displayNl.
+      ('	the end' asUppercase) displayNl.
+
+    ]
+
+  ].
+
+].
+
+'' displayNl.
+   Date dateAndTimeNow asLocal displayNl.
+'' displayNl.
 

@@ -14,7 +14,7 @@ command line
 
     cd nomenclature
 
-    gst -g compendium.st | less
+    gst -g compendium.st
 
 ---
 
