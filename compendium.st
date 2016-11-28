@@ -126,7 +126,7 @@ Object subclass: Scordatura [
     ^((db at: qp) copyFrom:31 to:60), ((db at: qp) copyFrom: 1 to:30).
   ]
  
-  Scordatura class >> beadgcf: qp [
+  beadgcf: qp [
     Transcript show: qp, '-beadgcf'; cr.
     Transcript show: (Scordatura sFn: qp); cr.
     Transcript show: (Scordatura sCn: qp); cr. 
@@ -137,7 +137,7 @@ Object subclass: Scordatura [
     Transcript show: (Scordatura sBn: qp); cr. 
   ]
 
-  Scordatura class >> bfbfb: qp [
+  bfbfb: qp [
     Transcript show: qp, '-bfbfb'; cr.
     Transcript show: (Scordatura sBn: qp); cr. 
     Transcript show: (Scordatura sFn: qp); cr.
@@ -146,7 +146,7 @@ Object subclass: Scordatura [
     Transcript show: (Scordatura sBn: qp); cr.
   ]
 
-  Scordatura class >> cgdae: qp [
+  cgdae: qp [
     Transcript show: qp, '-cgdae'; cr.
     Transcript show: (Scordatura sEn: qp); cr. 
     Transcript show: (Scordatura sAn: qp); cr.
@@ -155,7 +155,7 @@ Object subclass: Scordatura [
     Transcript show: (Scordatura sCn: qp); cr.
   ]
 
-  Scordatura class >> eadgbe: qp [
+  eadgbe: qp [
     Transcript show: qp, '-eadgbe'; cr.
     Transcript show: (Scordatura sEn: qp); cr. 
     Transcript show: (Scordatura sBn: qp); cr.
@@ -165,7 +165,7 @@ Object subclass: Scordatura [
     Transcript show: (Scordatura sEn: qp); cr. 
   ]
 
-  Scordatura class >> fkbjdn: qp [
+  fkbjdn: qp [
     Transcript show: qp, '-fkbjdn'; cr. 
     Transcript show: (Scordatura sDn: qp); cr. 
     Transcript show: (Scordatura sBj: qp); cr.
@@ -173,26 +173,6 @@ Object subclass: Scordatura [
     Transcript show: (Scordatura sDn: qp); cr. 
     Transcript show: (Scordatura sBj: qp); cr.
     Transcript show: (Scordatura sFk: qp); cr. 
-  ]
-
-  str5_k4: qp [
-    Scordatura bfbfb: qp.
-  ]
-
-  str5_p5: qp [
-    Scordatura cgdae: qp.
-  ]
-
-  str6_m3: qp [
-    Scordatura fkbjdn: qp.
-  ]
-
-  str6_std: qp [
-    Scordatura eadgbe: qp. 
-  ]
-
-  str7_p4: qp [
-    Scordatura beadgcf: qp.
   ]
 
   getKeyCol [
@@ -238,16 +218,16 @@ Scordatura initialize_db.
 
   ((inSTRUMent getKeyCol) includes: qp) ifTrue: [
     '' displayNl.
-    inSTRUMent str5_p5: qp.
+    inSTRUMent cgdae: qp.
 
     '' displayNl.
-    inSTRUMent str5_k4: qp.
+    inSTRUMent bfbfb: qp.
 
     '' displayNl.
-    inSTRUMent str6_std: qp.
+    inSTRUMent eadgbe: qp.
 
     '' displayNl.
-    inSTRUMent str6_m3: qp.
+    inSTRUMent fkbjdn: qp.
   ]
   ifFalse: [
     (qp ~= '') ifTrue: [
