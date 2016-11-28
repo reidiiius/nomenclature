@@ -175,25 +175,6 @@ Object subclass: Scordatura [
     Transcript show: (Scordatura sFk: qp); cr. 
   ]
 
-  display_All_Tunings [
-    Scordatura initialize_db.
-    Transcript show: ''; cr.
-    (db keys asSortedCollection) do: [ :qp |
-      Transcript show: ''; cr.
-        Scordatura eadgbe: qp. 
-      Transcript show: ''; cr.
-        Scordatura fkbjdn: qp. 
-      Transcript show: ''; cr.
-        Scordatura beadgcf: qp. 
-      Transcript show: ''; cr.
-        Scordatura bfbfb: qp.  
-      Transcript show: ''; cr.
-        Scordatura cgdae: qp. 
-      Transcript show: ''; cr.
-    ].
-    Transcript show: ''; cr.
-  ]
-
   str5_k4: qp [
     Scordatura bfbfb: qp.
   ]
@@ -214,12 +195,16 @@ Object subclass: Scordatura [
     Scordatura beadgcf: qp.
   ]
 
-  menu [
+  getKeyCol [
+    ^db keys asSortedCollection.
+  ]
+
+  menuMake [
     | i w |
       i := 1.
       w := 8.
     '' displayNl.
-    (db keys asSortedCollection) do: [ :qp |
+    (self getKeyCol) do: [ :qp |
       qp display.
       '	' display.
       (i == ( 1 * w)) ifTrue: [ '' displayNl ].
@@ -237,17 +222,13 @@ Object subclass: Scordatura [
     '' displayNl.
   ]
 
-  getKeyCol [
-    ^db keys.
-  ]
-
 ]
 
 Scordatura initialize_db.
 
   inSTRUMent := Scordatura new.
 
-  inSTRUMent menu.
+  inSTRUMent menuMake.
 
 [ qp ~= '' ] whileTrue: [
 
@@ -256,7 +237,6 @@ Scordatura initialize_db.
   qp := stdin nextLine.
 
   ((inSTRUMent getKeyCol) includes: qp) ifTrue: [
-
     '' displayNl.
     inSTRUMent str5_p5: qp.
 
@@ -268,26 +248,16 @@ Scordatura initialize_db.
 
     '' displayNl.
     inSTRUMent str6_m3: qp.
-
   ]
-
   ifFalse: [
-
     (qp ~= '') ifTrue: [
-
-      inSTRUMent menu.
-
+      inSTRUMent menuMake.
     ]
-
     ifFalse: [
-
       '' displayNl.
-      ('	the end' asUppercase) displayNl.
-
+      (' ~ program has terminated ~ ' asUppercase) displayNl.
     ]
-
   ].
-
 ].
 
 '' displayNl.
